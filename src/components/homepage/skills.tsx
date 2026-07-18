@@ -1,13 +1,19 @@
+import styles from './styles.module.css';
+
 export default function Skills() {
   const skills = [
-    'Python',
     'SQL',
+    'Power BI',
+    'Python',
+    'Excel',
+    'Data Visualisation',
+    'Data Analysis',
     'PostgreSQL',
+    'Data Modelling',
     'Docker',
     'FastAPI',
-    'Azure',
-    'Power BI',
     'Streamlit',
+    'Azure',
   ];
 
   return (
@@ -16,13 +22,13 @@ export default function Skills() {
         Technical Skills
       </h2>
 
-      <ul>
+      <div className={styles.tags}>
         {skills.map((skill) => (
-          <li key={skill}>
+          <span key={skill}>
             {skill}
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

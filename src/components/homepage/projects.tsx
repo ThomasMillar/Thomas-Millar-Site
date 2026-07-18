@@ -4,7 +4,7 @@ const projects = [
   {
     title: "UK Housing Data Platform",
     description:
-      "End-to-end data engineering platform using HM Land Registry data.",
+      "A data platform exploring UK property trends using HM Land Registry Price Paid data. Built automated data workflows, analytical datasets and interactive dashboards.",
     technologies: [
       "Python",
       "PostgreSQL",
@@ -12,19 +12,20 @@ const projects = [
       "FastAPI",
       "Streamlit"
     ],
-    link: "/docs/projects"
+    link: "/docs/uk-housing-platform"
   },
   {
     title: "Football Analytics Platform",
     description:
-      "Football data ingestion and analytics platform using APIs, Azure SQL and Power BI.",
+      "A football analytics solution combining API data ingestion, SQL modelling and Power BI dashboards to explore Premier League performance.",
     technologies: [
       "Python",
+      "SQL",
       "Azure SQL",
       "Power BI",
       "APIs"
     ],
-    link: "/docs/projects"
+    link: "/docs/football-analytics-platform"
   }
 ];
 
@@ -35,7 +36,10 @@ export default function Projects() {
 
       <div className={styles.projectGrid}>
         {projects.map((project) => (
-          <div className={styles.projectCard} key={project.title}>
+          <div
+            className={styles.projectCard}
+            key={project.title}
+          >
 
             <h3>
               {project.title}

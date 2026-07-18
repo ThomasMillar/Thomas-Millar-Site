@@ -5,13 +5,15 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Thomas Millar',
-  tagline: 'Data Analyst transitioning into Data Engineering. Building data platforms, ETL pipelines and analytics solutions.',
+  tagline:
+    'Data Analyst specialising in analytics, reporting and data solutions. Building towards Data Engineering through Python, SQL and data platforms.',
+
   favicon: 'img/favicon.ico',
 
   url: 'https://thomasmillar.co.uk',
   baseUrl: '/',
 
-  organizationName: 'YOUR_GITHUB_USERNAME',
+  organizationName: 'ThomasMillar',
   projectName: 'Thomas-Millar-Site',
 
   onBrokenLinks: 'throw',
@@ -33,9 +35,9 @@ const config = {
 
         blog: {
           showReadingTime: true,
-          blogTitle: 'Engineering Blog',
+          blogTitle: 'Data & Analytics Blog',
           blogDescription:
-            'Data engineering, Python, SQL and analytics projects.',
+            'Projects, tutorials and insights covering data analytics, Python, SQL and my journey towards data engineering.',
         },
 
         theme: {
@@ -50,30 +52,35 @@ const config = {
     ({
       navbar: {
         title: 'Thomas Millar',
+
         items: [
           {
-            label: 'Projects',
+            label: 'Portfolio',
             to: '/docs/projects',
             position: 'left',
           },
+
           {
             label: 'Blog',
             to: '/blog',
             position: 'left',
           },
+
           {
             label: 'CV',
             href: '/CV.pdf',
             position: 'right',
           },
+
           {
             label: 'GitHub',
-            href: 'https://github.com/YOUR_USERNAME',
+            href: 'https://github.com/ThomasMillar',
             position: 'right',
           },
+
           {
             label: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/YOUR_PROFILE',
+            href: 'https://www.linkedin.com/in/thomas-millar-00a896234/',
             position: 'right',
           },
         ],

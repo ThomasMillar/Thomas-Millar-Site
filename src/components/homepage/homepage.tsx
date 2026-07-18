@@ -1,6 +1,7 @@
 import Hero from './hero';
 import Projects from './projects';
 import Skills from './skills';
+import About from './about';
 
 import styles from './styles.module.css';
 
@@ -15,6 +16,10 @@ export default function HomePage() {
 
       <section className={styles.section}>
         <Skills />
+      </section>
+
+      <section className={styles.section}>
+        <About />
       </section>
     </main>
   );

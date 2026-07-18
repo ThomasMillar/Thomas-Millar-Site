@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout
       title="Thomas Millar"
-      description="Data Analyst and Data Engineer portfolio"
+      description="Data Analyst portfolio showcasing analytics, dashboards, Python projects and progression towards Data Engineering"
     >
       <HomePage />
     </Layout>

@@ -8,27 +8,39 @@ export default function Hero() {
       </h1>
 
       <h2>
-        Data Analyst → Data Engineer
+        Data Analyst | Building towards Data Engineering
       </h2>
 
       <p>
-        Building data platforms, ETL pipelines and analytics solutions
-        using Python, SQL, PostgreSQL and cloud technologies.
+        I build data-driven solutions using SQL, Python and
+        visualisation tools, while developing skills in data
+        pipelines, databases and cloud technologies.
       </p>
 
       <div className={styles.buttons}>
         <a
+          className="button button--primary button--lg"
           href="/docs/projects"
-          className="button button--primary"
         >
           View Projects
         </a>
 
         <a
-          href="https://github.com/"
-          className="button button--secondary"
+          className="button button--secondary button--lg"
+          href="https://github.com/ThomasMillar"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           GitHub
+        </a>
+
+        <a
+          className="button button--secondary button--lg"
+          href="https://www.linkedin.com/in/thomas-millar-00a896234/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
         </a>
       </div>
     </header>
