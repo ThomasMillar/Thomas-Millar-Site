@@ -2,21 +2,46 @@ import styles from './styles.module.css';
 
 export default function About() {
   return (
-    <div>
-      <h2>
-        About Me
-      </h2>
+    <section className={styles.aboutSection} id="about">
+      <div className={styles.aboutPanel}>
+        <p className={styles.eyebrow}>ABOUT</p>
 
-      <p>
-        I am a Data Analyst focused on turning data into meaningful
-        insights through SQL, Python and data visualisation.
-      </p>
+        <div className={styles.aboutGrid}>
+          <h2>
+            I like building things that make data easier to use.
+          </h2>
 
-      <p>
-        Alongside my analytics work, I am developing my data engineering
-        skills by building data pipelines, working with databases and
-        creating end-to-end data solutions.
-      </p>
-    </div>
+          <div className={styles.aboutCopy}>
+            <p>
+              I currently work as a Data Analyst, using data to answer questions,
+              improve reporting and support decision making.
+            </p>
+            <p>
+              I’m developing further into data engineering by building projects
+              that cover the full journey from source data and ingestion through
+              to modelling, APIs and reporting.
+            </p>
+
+            <div className={styles.aboutLinks}>
+              <a
+                href="https://github.com/ThomasMillar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
+              <a
+                href="https://www.linkedin.com/in/thomas-millar-00a896234/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+              <a href="/CV.pdf">CV ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

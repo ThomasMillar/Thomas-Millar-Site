@@ -1,160 +1,439 @@
 .hero {
-  padding: 7rem 2rem;
-  text-align: center;
-  background:
-    radial-gradient(
-      circle at top,
-      rgba(59, 130, 246, 0.15),
-      transparent 45%
-    ),
-    #0b1120;
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #080a0f;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
+.heroBackdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7,9,14,.96) 0%, rgba(7,9,14,.82) 42%, rgba(7,9,14,.30) 74%, rgba(7,9,14,.62) 100%),
+    linear-gradient(0deg, #080a0f 0%, transparent 45%),
+    url('/img/site/hero-data-city.jpg') center 48% / cover no-repeat;
+  opacity: .92;
+  transform: scale(1.01);
+}
+
+.heroBackdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to right, transparent 5%, #000 70%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 8rem 0 5rem;
+}
+
+.eyebrow,
+.projectIndex {
+  margin: 0 0 1.25rem;
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  color: #69b7ff;
+}
 
 .hero h1 {
-  font-size: 4.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: -2px;
+  max-width: 1050px;
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 650;
+  color: #f5f7fb;
 }
 
-
-.hero h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
+.hero h1 span {
+  display: block;
+  color: #8a94a5;
 }
 
-
-.hero p {
-  max-width: 750px;
-  margin: 2rem auto;
-  font-size: 1.25rem;
-  line-height: 1.8;
-  opacity: 0.85;
-}
-
-
-/* Buttons */
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-
-/* Sections */
-
-.section {
-  padding: 5rem 2rem;
-}
-
-
-
-/* Project cards */
-
-.projectGrid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(320px, 380px)
-  );
-  justify-content: center;
-  gap: 2rem;
-  margin: 3rem auto;
-}
-
-
-.projectCard {
-  background: rgba(24, 29, 37, 0.8);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 2rem;
-
-  text-align: left;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease;
-}
-
-
-.projectCard:hover {
-  transform: translateY(-8px);
-  border-color: rgba(59,130,246,0.5);
-}
-
-
-.projectCard h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-
-.projectCard p {
+.heroCopy {
+  max-width: 650px;
+  margin: 2.2rem 0 0;
+  color: #b2bac7;
+  font-size: 1.12rem;
   line-height: 1.7;
-  opacity: 0.85;
 }
 
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 2.2rem;
+}
 
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 1.2rem;
+  background: #f1f5f9;
+  color: #090b10 !important;
+  border: 1px solid #f1f5f9;
+  text-decoration: none !important;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease;
+}
 
-/* Technology tags */
+.primaryButton:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+.textLink,
+.projectLinks a,
+.aboutLinks a {
+  color: #dbe2ec;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+.textLink:hover,
+.projectLinks a:hover,
+.aboutLinks a:hover {
+  color: #69b7ff;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 4rem;
+  color: #717b8d;
+  font-size: .82rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.projectsSection,
+.skillsSection,
+.aboutSection {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+
+.sectionHeader {
+  max-width: 780px;
+  margin-bottom: 4rem;
+}
+
+.sectionHeader h2,
+.aboutGrid h2 {
+  margin: 0;
+  color: #f3f5f8;
+  font-size: clamp(2.35rem, 4vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 600;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.projectRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.projectRowReverse {
+  grid-template-columns: minmax(300px, .65fr) minmax(0, 1.35fr);
+}
+
+.projectRowReverse .projectVisual {
+  order: 2;
+}
+
+.projectRowReverse .projectContent {
+  order: 1;
+}
+
+.projectVisual {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+  text-decoration: none !important;
+  isolation: isolate;
+  background-color: #111721;
+}
+
+.projectVisual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: transform .7s cubic-bezier(.2,.75,.2,1);
+  z-index: -2;
+}
+
+.projectVisual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5,8,12,.08), rgba(5,8,12,.52)),
+    linear-gradient(90deg, rgba(5,8,12,.22), transparent 55%);
+  z-index: -1;
+}
+
+.projectVisual:hover::before {
+  transform: scale(1.035);
+}
+
+.housingVisual {
+  background:
+    linear-gradient(180deg, rgba(9,12,17,.08), rgba(9,12,17,.28)),
+    url('/img/site/housing-atmosphere.jpg') center / cover no-repeat;
+}
+
+.footballVisual {
+  background:
+    linear-gradient(180deg, rgba(9,12,17,.05), rgba(9,12,17,.25)),
+    url('/img/site/football-atmosphere.jpg') center / cover no-repeat;
+}
+
+.visualGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.projectNumber {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: rgba(255,255,255,.9);
+  font-size: .82rem;
+  letter-spacing: .15em;
+}
+
+.visualLabel {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  color: white;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.projectContent h3 {
+  margin: 0;
+  color: #f4f6fa;
+  font-size: clamp(2.25rem, 3.5vw, 3.75rem);
+  line-height: 1;
+  letter-spacing: -.045em;
+  font-weight: 600;
+}
+
+.projectContent > p:not(.projectIndex) {
+  margin: 1.7rem 0;
+  color: #9da7b7;
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
+  gap: .55rem;
 }
-
 
 .tags span {
-  background: #111827;
-  border: 1px solid rgba(255,255,255,0.1);
-
-  padding: 0.4rem 0.9rem;
-
-  border-radius: 999px;
-
-  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.025);
+  color: #b9c2ce;
+  padding: .42rem .7rem;
+  font-size: .74rem;
+  letter-spacing: .035em;
 }
 
+.projectLinks {
+  display: flex;
+  gap: 1.3rem;
+  margin-top: 2rem;
+}
 
+.skillsSection {
+  border-top: 1px solid rgba(255,255,255,.08);
+}
 
-/* Mobile */
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,.09);
+  border-bottom: 1px solid rgba(255,255,255,.09);
+}
 
-@media screen and (max-width: 900px) {
+.skillGroup {
+  padding: 2rem 2.2rem;
+  border-right: 1px solid rgba(255,255,255,.09);
+}
 
-  .hero h1 {
-    font-size: 3rem;
+.skillGroup:last-child {
+  border-right: 0;
+}
+
+.skillGroup h3 {
+  color: #f2f4f8;
+  font-size: 1.1rem;
+  margin-bottom: 1.6rem;
+}
+
+.skillGroup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillGroup li {
+  padding: .52rem 0;
+  color: #8f99aa;
+  border-bottom: 1px solid rgba(255,255,255,.045);
+}
+
+.skillGroup li:last-child {
+  border-bottom: 0;
+}
+
+.aboutSection {
+  padding-top: 3rem;
+}
+
+.aboutPanel {
+  position: relative;
+  padding: 5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.09);
+  background:
+    linear-gradient(115deg, rgba(14,19,28,.97), rgba(11,14,21,.88)),
+    radial-gradient(circle at 85% 20%, rgba(74,157,255,.13), transparent 30%);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 5rem;
+}
+
+.aboutCopy p {
+  color: #a7b0bf;
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+.aboutLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
   }
 
-
-  .hero h2 {
-    font-size: 1.5rem;
+  .heroInner {
+    padding: 8rem 0 3.5rem;
   }
 
-
-  .projectGrid {
+  .projectRow,
+  .projectRowReverse,
+  .aboutGrid {
     grid-template-columns: 1fr;
   }
 
+  .projectRowReverse .projectVisual,
+  .projectRowReverse .projectContent {
+    order: initial;
+  }
+
+  .projectVisual {
+    min-height: 430px;
+  }
+
+  .projectList {
+    gap: 6rem;
+  }
+
+  .skillGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillGroup {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+  }
+
+  .skillGroup:last-child {
+    border-bottom: 0;
+  }
+
+  .aboutPanel {
+    padding: 3rem;
+  }
 }
 
-
-@media screen and (max-width: 600px) {
-
-  .hero {
-    padding: 4rem 1rem;
+@media (max-width: 600px) {
+  .heroInner,
+  .projectsSection,
+  .skillsSection,
+  .aboutSection {
+    width: min(100% - 30px, 1240px);
   }
 
-
-  .buttons {
-    flex-direction: column;
-    align-items: center;
+  .hero h1 {
+    font-size: 3.35rem;
   }
 
+  .heroCopy {
+    font-size: 1rem;
+  }
+
+  .heroMeta {
+    gap: .7rem 1.2rem;
+  }
+
+  .projectsSection,
+  .skillsSection,
+  .aboutSection {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .projectVisual {
+    min-height: 320px;
+  }
+
+  .aboutPanel {
+    padding: 2rem;
+  }
 }

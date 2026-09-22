@@ -1,0 +1,138 @@
+.page {
+  background: #080a0f;
+  color: #dce2eb;
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 72vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--project-image) center / cover no-repeat;
+  transform: scale(1.01);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7,9,14,.95), rgba(7,9,14,.63) 56%, rgba(7,9,14,.35)),
+    linear-gradient(0deg, #080a0f 0%, transparent 50%);
+}
+
+.heroInner,
+.content {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 0 4rem;
+}
+
+.kicker {
+  color: #69b7ff;
+  letter-spacing: .16em;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: .9rem 0 1.4rem;
+  max-width: 850px;
+  font-size: clamp(3rem, 6.5vw, 6.6rem);
+  line-height: .95;
+  letter-spacing: -.06em;
+  font-weight: 650;
+}
+
+.lede {
+  max-width: 680px;
+  color: #aeb7c4;
+  font-size: 1.1rem;
+  line-height: 1.72;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.actions a {
+  color: #f3f6fa;
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.content {
+  padding: 6rem 0 8rem;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 4rem;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.block h2 {
+  margin: 0;
+  color: #f3f5f8;
+  font-size: 1.3rem;
+}
+
+.block p,
+.block li {
+  color: #9da7b7;
+  line-height: 1.75;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: 1.2rem;
+}
+
+.stack span {
+  padding: .4rem .7rem;
+  border: 1px solid rgba(255,255,255,.11);
+  color: #b7c0cc;
+  font-size: .76rem;
+}
+
+.flow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid rgba(255,255,255,.09);
+  background: #0d1118;
+  color: #c8d4e3;
+  overflow-x: auto;
+}
+
+@media (max-width: 760px) {
+  .heroInner,
+  .content {
+    width: calc(100% - 30px);
+  }
+
+  .block {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}

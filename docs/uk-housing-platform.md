@@ -1,5 +1,14 @@
 # UK Housing Data Platform
 
+## Dashboard Preview
+
+![UK Housing Dashboard](/img/housing-dashboard.png)
+
+## Links
+
+- [GitHub Repository](https://github.com/ThomasMillar/UK-housing-data-platform)
+- [Live Dashboard](YOUR_STREAMLIT_LINK)
+
 ## Overview
 
 A data analytics platform exploring UK property market trends using HM Land Registry Price Paid Data.

@@ -3,45 +3,36 @@ import styles from './styles.module.css';
 export default function Hero() {
   return (
     <header className={styles.hero}>
-      <h1>
-        Thomas Millar
-      </h1>
+      <div className={styles.heroBackdrop} aria-hidden="true" />
 
-      <h2>
-        Data Analyst | Building towards Data Engineering
-      </h2>
+      <div className={styles.heroInner}>
+        <p className={styles.eyebrow}>DATA • ANALYTICS • ENGINEERING</p>
 
-      <p>
-        I build data-driven solutions using SQL, Python and
-        visualisation tools, while developing skills in data
-        pipelines, databases and cloud technologies.
-      </p>
+        <h1>
+          Data Analyst working across
+          <span> analytics and data engineering</span>
+        </h1>
 
-      <div className={styles.buttons}>
-        <a
-          className="button button--primary button--lg"
-          href="/docs/projects"
-        >
-          View Projects
-        </a>
+        <p className={styles.heroCopy}>
+          I work with SQL, Python, Microsoft Fabric and Power BI to build
+          data pipelines, models and reporting solutions from source through
+          to end user.
+        </p>
 
-        <a
-          className="button button--secondary button--lg"
-          href="https://github.com/ThomasMillar"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
+        <div className={styles.heroActions}>
+          <a className={styles.primaryButton} href="#projects">
+            Explore my work
+          </a>
+          <a className={styles.textLink} href="/CV.pdf">
+            View CV <span>↗</span>
+          </a>
+        </div>
 
-        <a
-          className="button button--secondary button--lg"
-          href="https://www.linkedin.com/in/thomas-millar-00a896234/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
+        <div className={styles.heroMeta}>
+          <span>Manchester, UK</span>
+          <span>Data Analyst</span>
+          <span>Building towards Data Engineering</span>
+        </div>
       </div>
     </header>
   );

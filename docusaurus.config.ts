@@ -1,21 +1,15 @@
 // @ts-check
-
 import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Thomas Millar',
-  tagline:
-    'Data Analyst specialising in analytics, reporting and data solutions. Building towards Data Engineering through Python, SQL and data platforms.',
-
+  tagline: 'Data Analyst building end-to-end data products.',
   favicon: 'img/favicon.ico',
-
   url: 'https://thomasmillar.co.uk',
   baseUrl: '/',
-
   organizationName: 'ThomasMillar',
   projectName: 'Thomas-Millar-Site',
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -27,90 +21,53 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: './sidebars.ts',
-        },
-
-        blog: {
-          showReadingTime: true,
-          blogTitle: 'Data & Analytics Blog',
-          blogDescription:
-            'Projects, tutorials and insights covering data analytics, Python, SQL and my journey towards data engineering.',
-        },
-
+      {
+        docs: false,
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
-      }),
+      },
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: 'Thomas Millar',
+  themeConfig: {
+    navbar: {
+      title: 'Thomas Millar',
+      items: [
+        {label: 'Projects', to: '/#projects', position: 'left'},
+        {label: 'About', to: '/#about', position: 'left'},
+        {label: 'CV', href: '/CV.pdf', position: 'right'},
+        {
+          label: 'GitHub',
+          href: 'https://github.com/ThomasMillar',
+          position: 'right',
+        },
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/thomas-millar-00a896234/',
+          position: 'right',
+        },
+      ],
+    },
 
-        items: [
-          {
-            label: 'Portfolio',
-            to: '/docs/projects',
-            position: 'left',
-          },
+    footer: {
+      style: 'dark',
+      copyright: `© ${new Date().getFullYear()} Thomas Millar`,
+    },
 
-          {
-            label: 'Blog',
-            to: '/blog',
-            position: 'left',
-          },
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
 
-          {
-            label: 'CV',
-            href: '/CV.pdf',
-            position: 'right',
-          },
-
-          {
-            label: 'GitHub',
-            href: 'https://github.com/ThomasMillar',
-            position: 'right',
-          },
-
-          {
-            label: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/thomas-millar-00a896234/',
-            position: 'right',
-          },
-        ],
-      },
-
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Thomas Millar`,
-      },
-
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-        additionalLanguages: ['powershell', 'sql'],
-      },
-
-      colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
-        respectPrefersColorScheme: false,
-      },
-    }),
-
-  markdown: {
-    mermaid: true,
+    prism: {
+      theme: prismThemes.dracula,
+      darkTheme: prismThemes.dracula,
+      additionalLanguages: ['powershell', 'sql'],
+    },
   },
-
-  themes: [
-    '@docusaurus/theme-mermaid',
-  ],
 };
 
 export default config;

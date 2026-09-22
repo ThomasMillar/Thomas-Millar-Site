@@ -1,5 +1,14 @@
 # Football Analytics Platform
 
+## Dashboard Preview
+
+![Football Analytics Dashboard](/img/football-dashboard.png)
+
+## Links
+
+- [GitHub Repository](https://github.com/ThomasMillar/Football-Analytics-Platform)
+- [Live Dashboard](YOUR_POWERBI_LINK)
+
 ## Overview
 
 A football analytics project combining API data ingestion, SQL analysis and Power BI dashboards to explore Premier League performance.
