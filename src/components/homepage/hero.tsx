@@ -23,7 +23,7 @@ export default function Hero() {
           <a className={styles.primaryButton} href="#projects">
             Explore my work
           </a>
-          <a className={styles.textLink} href="/CV.pdf">
+          <a className={styles.textLink} href="pathname:///CV.pdf">
             View CV <span>↗</span>
           </a>
         </div>

@@ -37,7 +37,7 @@ export default function About() {
               >
                 LinkedIn ↗
               </a>
-              <a href="/CV.pdf">CV ↗</a>
+              <a href="pathname:///CV.pdf">CV ↗</a>
             </div>
           </div>
         </div>

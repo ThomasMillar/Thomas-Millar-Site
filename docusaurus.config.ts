@@ -37,7 +37,7 @@ const config = {
       items: [
         {label: 'Projects', to: '/#projects', position: 'left'},
         {label: 'About', to: '/#about', position: 'left'},
-        {label: 'CV', href: '/CV.pdf', position: 'right'},
+        {label: 'CV', href: 'pathname:///CV.pdf', position: 'right'},
         {
           label: 'GitHub',
           href: 'https://github.com/ThomasMillar',
